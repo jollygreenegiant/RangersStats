@@ -1,0 +1,122 @@
+<animated-vector
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt">
+    <aapt:attr name="android:drawable">
+        <vector
+            android:height="135dp"
+            android:viewportHeight="135"
+            android:viewportWidth="140"
+            android:width="140dp">
+            <group
+                android:scaleX="0.8"
+                android:scaleY="0.8"
+                android:pivotX="70"
+                android:pivotY="50">
+                <path
+                    android:name="path_1"
+                    android:strokeColor="#FFFFFF"
+                    android:strokeWidth="3"
+                    android:strokeLineCap="round"
+                    android:pathData="M 129.257 18.863 L 139.243 1.138 L 105.6 1.138 L 100.275 6.317 L 94.451 0.887 L 46.31 0.887 L 40.487 6.317 L 35.162 1.138 L 1.518 1.138 L 11.504 18.863 L 11.504 111.055 C 11.504 114.95 13.053 118.689 15.807 121.444 C 18.561 124.198 22.3 125.747 26.195 125.747 L 55.333 125.747 C 58.325 125.777 61.265 126.544 63.889 127.981 C 66.514 129.418 68.744 131.481 70.38 133.986 C 72.017 131.481 74.247 129.418 76.872 127.981 C 79.497 126.544 82.436 125.777 85.428 125.747 L 114.566 125.747 C 118.46 125.743 122.197 124.192 124.95 121.439 C 127.703 118.686 129.253 114.949 129.257 111.055 Z"
+                    />
+
+                <path
+                    android:name="path_2"
+                    android:strokeColor="#55FFFFFF"
+                    android:strokeWidth="8"
+                    android:strokeLineCap="round"
+                    android:pathData="M 129.257 18.863 L 139.243 1.138 L 105.6 1.138 L 100.275 6.317 L 94.451 0.887 L 46.31 0.887 L 40.487 6.317 L 35.162 1.138 L 1.518 1.138 L 11.504 18.863 L 11.504 111.055 C 11.504 114.95 13.053 118.689 15.807 121.444 C 18.561 124.198 22.3 125.747 26.195 125.747 L 55.333 125.747 C 58.325 125.777 61.265 126.544 63.889 127.981 C 66.514 129.418 68.744 131.481 70.38 133.986 C 72.017 131.481 74.247 129.418 76.872 127.981 C 79.497 126.544 82.436 125.777 85.428 125.747 L 114.566 125.747 C 118.46 125.743 122.197 124.192 124.95 121.439 C 127.703 118.686 129.253 114.949 129.257 111.055 Z"
+                    />
+
+                <path
+                    android:name="path_3"
+                    android:strokeColor="#22FFFFFF"
+                    android:strokeWidth="16"
+                    android:strokeLineCap="round"
+                    android:pathData="M 129.257 18.863 L 139.243 1.138 L 105.6 1.138 L 100.275 6.317 L 94.451 0.887 L 46.31 0.887 L 40.487 6.317 L 35.162 1.138 L 1.518 1.138 L 11.504 18.863 L 11.504 111.055 C 11.504 114.95 13.053 118.689 15.807 121.444 C 18.561 124.198 22.3 125.747 26.195 125.747 L 55.333 125.747 C 58.325 125.777 61.265 126.544 63.889 127.981 C 66.514 129.418 68.744 131.481 70.38 133.986 C 72.017 131.481 74.247 129.418 76.872 127.981 C 79.497 126.544 82.436 125.777 85.428 125.747 L 114.566 125.747 C 118.46 125.743 122.197 124.192 124.95 121.439 C 127.703 118.686 129.253 114.949 129.257 111.055 Z"
+                    />
+            </group>
+        </vector>
+    </aapt:attr>
+    <target android:name="path_1">
+        <aapt:attr name="android:animation">
+            <set>
+                <objectAnimator
+                    android:duration="1500"
+                    android:repeatCount="infinite"
+                    android:interpolator="@android:interpolator/accelerate_decelerate">
+                    <propertyValuesHolder
+                        android:propertyName="trimPathStart">
+                        <keyframe android:fraction="0" android:value="1"/>
+                        <keyframe android:fraction=".5" android:value="0"/>
+                    </propertyValuesHolder>
+                </objectAnimator>
+                <objectAnimator
+                    android:duration="1500"
+                    android:repeatCount="infinite"
+                    android:interpolator="@android:interpolator/accelerate_decelerate" >
+                    <propertyValuesHolder
+                        android:propertyName="trimPathEnd">
+                        <keyframe android:fraction="0" android:value="1"/>
+                        <keyframe android:fraction=".5" android:value="1"/>
+                        <keyframe android:fraction="1" android:value="0"/>
+                    </propertyValuesHolder>
+                </objectAnimator>
+            </set>
+        </aapt:attr>
+    </target>
+    <target android:name="path_2">
+        <aapt:attr name="android:animation">
+            <set>
+                <objectAnimator
+                    android:duration="1500"
+                    android:repeatCount="infinite"
+                    android:interpolator="@android:interpolator/accelerate_decelerate">
+                    <propertyValuesHolder
+                        android:propertyName="trimPathStart">
+                        <keyframe android:fraction="0" android:value="1"/>
+                        <keyframe android:fraction=".5" android:value="0"/>
+                    </propertyValuesHolder>
+                </objectAnimator>
+                <objectAnimator
+                    android:duration="1500"
+                    android:repeatCount="infinite"
+                    android:interpolator="@android:interpolator/accelerate_decelerate" >
+                    <propertyValuesHolder
+                        android:propertyName="trimPathEnd">
+                        <keyframe android:fraction="0" android:value="1"/>
+                        <keyframe android:fraction=".5" android:value="1"/>
+                        <keyframe android:fraction="1" android:value="0"/>
+                    </propertyValuesHolder>
+                </objectAnimator>
+            </set>
+        </aapt:attr>
+    </target>
+    <target android:name="path_3">
+        <aapt:attr name="android:animation">
+            <set>
+                <objectAnimator
+                    android:duration="1500"
+                    android:repeatCount="infinite"
+                    android:interpolator="@android:interpolator/accelerate_decelerate">
+                    <propertyValuesHolder
+                        android:propertyName="trimPathStart">
+                        <keyframe android:fraction="0" android:value="1"/>
+                        <keyframe android:fraction=".5" android:value="0"/>
+                    </propertyValuesHolder>
+                </objectAnimator>
+                <objectAnimator
+                    android:duration="1500"
+                    android:repeatCount="infinite"
+                    android:interpolator="@android:interpolator/accelerate_decelerate" >
+                    <propertyValuesHolder
+                        android:propertyName="trimPathEnd">
+                        <keyframe android:fraction="0" android:value="1"/>
+                        <keyframe android:fraction=".5" android:value="1"/>
+                        <keyframe android:fraction="1" android:value="0"/>
+                    </propertyValuesHolder>
+                </objectAnimator>
+            </set>
+        </aapt:attr>
+    </target>
+</animated-vector>
