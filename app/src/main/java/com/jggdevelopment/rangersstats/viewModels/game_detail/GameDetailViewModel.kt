@@ -23,7 +23,7 @@ class GameDetailViewModel(
 
     fun getGame(gameId: Int) = viewModelScope.launch {
         _state.update { GameDetailState.Loading }
-        
+
         val gameCenterResponse = async { rangersRepository.getGame(gameId) }.await()
 
         if (gameCenterResponse is RangersResult.Success) {
