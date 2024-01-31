@@ -4,11 +4,9 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Card
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
@@ -27,7 +25,7 @@ import coil.decode.SvgDecoder
 import coil.request.ImageRequest
 import com.jggdevelopment.rangersstats.R
 import com.jggdevelopment.rangersstats.model.Game
-import com.jggdevelopment.rangersstats.model.mock.mockGame
+import com.jggdevelopment.rangersstats.model.mock.fakeGame
 import com.jggdevelopment.rangersstats.ui.util.debugPlaceholder
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -41,34 +39,55 @@ fun GameCard(
         onClick = { onClick(game.id) },
         modifier = modifier
     ) {
-        Column(modifier = Modifier.padding(16.dp)) {
-            Row(
-                verticalAlignment = Alignment.CenterVertically,
-                horizontalArrangement = Arrangement.SpaceAround,
-                modifier = Modifier.fillMaxWidth()
+        GameCardContent(
+            awayLogo = game.awayTeam.logo,
+            homeLogo = game.homeTeam.logo,
+            awayName = game.awayTeam.placeName.default,
+            homeName = game.homeTeam.placeName.default,
+            gameDate = game.formattedStartDate,
+            gameTime = game.formattedStartTimeEastern,
+            modifier = Modifier.padding(16.dp)
+        )
+    }
+}
+
+@Composable
+fun GameCardContent(
+    awayLogo: String,
+    homeLogo: String,
+    awayName: String,
+    homeName: String,
+    gameDate: String,
+    gameTime: String,
+    modifier: Modifier = Modifier
+) {
+    Column(modifier = modifier) {
+        Row(
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.SpaceAround,
+            modifier = Modifier.fillMaxWidth()
+        ) {
+            TeamDisplay(
+                logo = awayLogo,
+                name = awayName,
+                modifier = Modifier.weight(1f)
+            )
+            Column(
+                modifier = Modifier.weight(1f),
+                horizontalAlignment = Alignment.CenterHorizontally
             ) {
-                TeamDisplay(
-                    logo = game.awayTeam.logo,
-                    name = game.awayTeam.placeName.default,
-                    modifier = Modifier.weight(1f)
-                )
-                Column(
-                    modifier = Modifier.weight(1f),
-                    horizontalAlignment = Alignment.CenterHorizontally
-                ) {
-                    Text(text = "@")
-                    Spacer(modifier = Modifier.height(8.dp))
-                    GameDate(
-                        date = game.formattedStartDate,
-                        time = game.formattedStartTimeEastern
-                    )
-                }
-                TeamDisplay(
-                    logo = game.homeTeam.logo,
-                    name = game.homeTeam.placeName.default,
-                    modifier = Modifier.weight(1f)
+                Text(text = "@")
+                Spacer(modifier = Modifier.height(8.dp))
+                GameDate(
+                    date = gameDate,
+                    time = gameTime
                 )
             }
+            TeamDisplay(
+                logo = homeLogo,
+                name = homeName,
+                modifier = Modifier.weight(1f)
+            )
         }
     }
 }
@@ -85,11 +104,13 @@ private fun GameDate(
     ) {
         Text(
             text = date,
-            fontWeight = FontWeight.Bold
+            fontWeight = FontWeight.Bold,
+            textAlign = TextAlign.Center
         )
         Text(
             text = time,
-            fontStyle = FontStyle.Italic
+            fontStyle = FontStyle.Italic,
+            textAlign = TextAlign.Center
         )
     }
 }
@@ -126,7 +147,7 @@ private fun TeamDisplay(
 private fun GameCardPreview() {
     MaterialTheme {
         GameCard(
-            game = mockGame,
+            game = fakeGame,
             onClick = {},
             modifier = Modifier.fillMaxWidth()
         )

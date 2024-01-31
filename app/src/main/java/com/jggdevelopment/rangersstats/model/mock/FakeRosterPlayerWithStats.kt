@@ -3,10 +3,9 @@ package com.jggdevelopment.rangersstats.model.mock
 import com.jggdevelopment.rangersstats.model.Name
 import com.jggdevelopment.rangersstats.model.PlayerGameStats
 import com.jggdevelopment.rangersstats.model.PlayerStats
-import com.jggdevelopment.rangersstats.model.RosterPlayer
 import com.jggdevelopment.rangersstats.model.RosterPlayerWithStats
 
-val mockRosterPlayerWithStats = RosterPlayerWithStats(
+val fakeRosterPlayerWithStats = RosterPlayerWithStats(
     id = 1,
     headshot = "https://assets.nhle.com/mugs/nhl/20232024/NYR/8482157.png",
     firstName = Name("firstName1"),
@@ -38,26 +37,30 @@ val mockRosterPlayerWithStats = RosterPlayerWithStats(
         shorthandedGoals = 100,
         shorthandedPoints = 100
     ),
-    last5Games = listOf(
-        PlayerGameStats(
-            goals = 100,
-            assists = 100,
-            points = 100,
-            plusMinus = 100,
-            pim = 100,
-            homeRoadFlag = "H",
-            shots = 100,
-            powerPlayGoals = 100,
-            shorthandedGoals = 100,
-            gameDate = "20204-01-23",
-            gameId = 2023020765,
-            gameTypeId = 2,
-            opponentAbbrev = "OTT",
-            teamAbbrev = "NYR",
-            shifts = 100,
-            toi = "12:46"
-        )
-    ),
+    last5Games = buildList {
+        repeat(5) {
+            add(
+                PlayerGameStats(
+                    goals = 100,
+                    assists = 100,
+                    points = 100,
+                    plusMinus = 100,
+                    pim = 100,
+                    homeRoadFlag = "H",
+                    shots = 100,
+                    powerPlayGoals = 100,
+                    shorthandedGoals = 100,
+                    gameDate = "20204-01-23",
+                    gameId = 2023020765,
+                    gameTypeId = 2,
+                    opponentAbbrev = "OTT",
+                    teamAbbrev = "NYR",
+                    shifts = 100,
+                    toi = "12:46"
+                )
+            )
+        }
+    },
     seasonTotals = listOf(
         PlayerStats(
             gamesPlayed = 100,

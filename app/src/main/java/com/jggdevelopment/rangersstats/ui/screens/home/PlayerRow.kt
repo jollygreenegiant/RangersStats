@@ -20,7 +20,7 @@ import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
 import com.jggdevelopment.rangersstats.R
 import com.jggdevelopment.rangersstats.model.RosterPlayer
-import com.jggdevelopment.rangersstats.model.mock.mockRosterPlayer1
+import com.jggdevelopment.rangersstats.model.mock.fakeRosterPlayer1
 import com.jggdevelopment.rangersstats.ui.util.debugPlaceholder
 
 @Composable
@@ -64,7 +64,7 @@ fun PlayerRow(
 private fun PlayerRowPreview() {
     MaterialTheme {
         PlayerRow(
-            player = mockRosterPlayer1
+            player = fakeRosterPlayer1
         )
     }
 }

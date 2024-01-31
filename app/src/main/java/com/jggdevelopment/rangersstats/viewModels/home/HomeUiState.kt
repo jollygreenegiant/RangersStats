@@ -5,9 +5,7 @@ import com.jggdevelopment.rangersstats.model.Roster
 import com.jggdevelopment.rangersstats.model.Schedule
 import com.jggdevelopment.rangersstats.model.Standings
 import com.jggdevelopment.rangersstats.util.RangersResult
-import kotlinx.coroutines.flow.update
 import org.threeten.bp.LocalDate
-import org.threeten.bp.format.DateTimeFormatter
 
 sealed interface HomeUiState {
     data object Loading : HomeUiState

@@ -1,9 +1,9 @@
 [versions]
 agp = "8.3.0-beta02"
+assertk = "0.28.0"
 kotlin = "1.9.0"
 coreKtx = "1.12.0"
 junit = "4.13.2"
-junitVersion = "1.1.5"
 espressoCore = "3.5.1"
 lifecycleRuntimeKtx = "2.7.0"
 activityCompose = "1.8.2"
@@ -12,16 +12,20 @@ composeBom = "2024.01.00"
 composeNavigation = "2.7.6"
 constraintLayoutCompose = "1.0.1"
 koin = "3.5.3"
+kotlinxCoroutinesTest = "1.7.3"
 kotlinImmutableCollections = "0.3.7"
 ktor = "2.2.3"
 lazytable = "1.7.0"
+mockk = "1.13.4"
 retrofit = "2.9.0"
+threeten = "1.6.8"
 threetenABP = "1.4.6"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+assertk = { group = "com.willowtreeapps.assertk", name = "assertk", version.ref = "assertk" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
-androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
+androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junit" }
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
 androidx-lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycleRuntimeKtx" }
 androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activityCompose" }
@@ -40,10 +44,13 @@ coil = { group = "io.coil-kt", name = "coil-compose", version.ref = "coil" }
 coil-svg = { group = "io.coil-kt", name = "coil-svg", version.ref = "coil" }
 lazy-table = { group = "io.github.oleksandrbalan", name = "lazytable", version.ref = "lazytable" }
 koin-compose = { group = "io.insert-koin", name = "koin-androidx-compose", version.ref = "koin" }
+kotlinx-coroutines-test = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-test", version.ref = "kotlinxCoroutinesTest" }
 kotlinx-immutable-collections = { group = "org.jetbrains.kotlinx", name = "kotlinx-collections-immutable", version.ref = "kotlinImmutableCollections" }
 ktor = { group = "io.ktor", name = "ktor-client-android", version.ref = "ktor" }
+mockk = { group = "io.mockk", name = "mockk", version.ref = "mockk" }
 retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
 retrofit-gson = { group = "com.squareup.retrofit2", name = "converter-gson", version.ref = "retrofit"}
+threeten = { group = "org.threeten", name = "threetenbp", version.ref = "threeten" }
 threetenABP = { group = "com.jakewharton.threetenabp", name = "threetenabp", version.ref = "threetenABP" }
 
 [plugins]

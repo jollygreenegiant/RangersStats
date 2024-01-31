@@ -19,12 +19,11 @@ class PlayerDetailViewModel(
     val player = _player.asStateFlow()
 
     init {
-        viewModelScope.launch {
-            getPlayer(playerId)
-        }
+        getPlayer(playerId)
     }
 
-    private suspend fun getPlayer(playerId: Int) {
+    fun getPlayer(playerId: Int) = viewModelScope.launch {
+        _player.emit(RangersResult.Loading)
         _player.emit(rangersRepository.getPlayer(playerId))
     }
 }

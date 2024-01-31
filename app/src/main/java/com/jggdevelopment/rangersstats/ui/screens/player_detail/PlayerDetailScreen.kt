@@ -2,13 +2,18 @@ package com.jggdevelopment.rangersstats.ui.screens.player_detail
 
 import androidx.compose.animation.AnimatedContent
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -26,19 +31,21 @@ import coil.request.ImageRequest
 import com.jggdevelopment.rangersstats.R
 import com.jggdevelopment.rangersstats.model.PlayerGameStats
 import com.jggdevelopment.rangersstats.model.RosterPlayerWithStats
-import com.jggdevelopment.rangersstats.model.mock.mockRosterPlayerWithStats
+import com.jggdevelopment.rangersstats.model.mock.fakeRosterPlayerWithStats
+import com.jggdevelopment.rangersstats.ui.screens.ErrorScreen
 import com.jggdevelopment.rangersstats.ui.theme.RangersWhite
 import com.jggdevelopment.rangersstats.ui.util.LoadingScreen
 import com.jggdevelopment.rangersstats.ui.util.PreviewScreenSize
 import com.jggdevelopment.rangersstats.ui.util.debugPlaceholder
 import com.jggdevelopment.rangersstats.util.RangersResult
+import com.jggdevelopment.rangersstats.util.inchesToFeetAndInches
 import eu.wewox.lazytable.LazyTable
 import eu.wewox.lazytable.LazyTableItem
 
 @Composable
 fun PlayerDetailScreen(
     player: RangersResult<RosterPlayerWithStats>,
-    onBackClick: () -> Unit
+    onRefresh: () -> Unit
 ) {
     AnimatedContent(targetState = player, label = "screen animation") { result ->
         result.handleUi(
@@ -51,7 +58,7 @@ fun PlayerDetailScreen(
                 LoadingScreen()
             },
             onError = {
-                Text("Error")
+                ErrorScreen(onRefresh)
             }
         )
     }
@@ -61,7 +68,7 @@ fun PlayerDetailScreen(
 fun PlayerDetailContent(
     player: RosterPlayerWithStats
 ) {
-    Column {
+    Column(modifier = Modifier.verticalScroll(rememberScrollState())) {
         PlayerBanner(
             headshotUrl = player.headshot,
             number = player.sweaterNumber.toString(),
@@ -69,25 +76,63 @@ fun PlayerDetailContent(
         )
 
         Spacer(modifier = Modifier.height(16.dp))
-        Text(
-            text = player.fullName,
-            fontWeight = FontWeight.Bold,
-            fontSize = 22.sp,
-            modifier = Modifier.align(Alignment.CenterHorizontally)
-        )
-        Spacer(modifier = Modifier.height(8.dp))
-        Text(
-            text = "${player.heightInFreedomUnits}, ${player.weightInPounds}lbs",
-            modifier = Modifier.align(Alignment.CenterHorizontally)
-        )
 
         Column(modifier = Modifier.padding(16.dp)) {
+            Text(
+                text = player.fullName,
+                fontWeight = FontWeight.Bold,
+                fontSize = 22.sp,
+                modifier = Modifier.align(Alignment.CenterHorizontally)
+            )
+            Spacer(modifier = Modifier.height(8.dp))
+            Text(
+                text = "${inchesToFeetAndInches(player.heightInInches)}, ${player.weightInPounds}lbs",
+                modifier = Modifier.align(Alignment.CenterHorizontally)
+            )
+            Spacer(modifier = Modifier.height(32.dp))
+            Row(
+                horizontalArrangement = Arrangement.SpaceEvenly,
+                modifier = Modifier.fillMaxWidth()
+            ) {
+                PlayerStat(
+                    title = "Goals",
+                    value = player.seasonTotals.last().goals.toString()
+                )
+                PlayerStat(
+                    title = "Assists",
+                    value = player.seasonTotals.last().assists.toString()
+                )
+                PlayerStat(
+                    title = "Points",
+                    value = player.seasonTotals.last().points.toString()
+                )
+            }
+            Spacer(modifier = Modifier.height(32.dp))
             Text(
                 "Last 5 Games",
                 style = MaterialTheme.typography.headlineMedium,
             )
             Last5Games(player.last5Games)
         }
+    }
+}
+
+@Composable
+private fun PlayerStat(
+    title: String,
+    value: String
+) {
+    Column(horizontalAlignment = Alignment.CenterHorizontally) {
+        Text(
+            text = title,
+            fontSize = 14.sp,
+            fontStyle = FontStyle.Italic
+        )
+        Text(
+            text = value,
+            fontSize = 32.sp,
+            fontWeight = FontWeight.Bold
+        )
     }
 }
 
@@ -216,8 +261,8 @@ private fun PlayerBanner(
 private fun PlayerDetailScreenPreview() {
     MaterialTheme {
         PlayerDetailScreen(
-            player = RangersResult.Success(mockRosterPlayerWithStats),
-            onBackClick = {}
+            player = RangersResult.Success(fakeRosterPlayerWithStats),
+            onRefresh = {}
         )
     }
 }

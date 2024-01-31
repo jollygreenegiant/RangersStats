@@ -2,6 +2,8 @@ package com.jggdevelopment.rangersstats.di
 
 import com.jggdevelopment.rangersstats.network.NhlApi
 import com.jggdevelopment.rangersstats.repository.RangersRepository
+import com.jggdevelopment.rangersstats.repository.RangersRepositoryImpl
+import com.jggdevelopment.rangersstats.viewModels.game_detail.GameDetailViewModel
 import com.jggdevelopment.rangersstats.viewModels.home.HomeViewModel
 import com.jggdevelopment.rangersstats.viewModels.player_detail.PlayerDetailViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
@@ -17,7 +19,7 @@ val appModule = module {
             // convert JSON object to Java object
             .build()
     }
-    factory { RangersRepository(get()) }
+    factory<RangersRepository> { RangersRepositoryImpl(get()) }
     single<NhlApi> { provideNhlApi(get()) }
 
     viewModel { HomeViewModel(get()) }
@@ -25,6 +27,12 @@ val appModule = module {
         PlayerDetailViewModel(
             get(),
             playerId
+        )
+    }
+    viewModel { (gameId: Int) ->
+        GameDetailViewModel(
+            get(),
+            gameId
         )
     }
 }

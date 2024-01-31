@@ -3,20 +3,20 @@ package com.jggdevelopment.rangersstats.model.mock
 import com.jggdevelopment.rangersstats.model.Roster
 import kotlinx.collections.immutable.persistentListOf
 
-val mockRoster = Roster(
+val fakeRoster = Roster(
     forwards = persistentListOf(
-        mockRosterPlayer1,
-        mockRosterPlayer2,
-        mockRosterPlayer3
+        fakeRosterPlayer1,
+        fakeRosterPlayer2,
+        fakeRosterPlayer3
     ),
     defensemen = persistentListOf(
-        mockRosterPlayer4,
-        mockRosterPlayer5,
-        mockRosterPlayer6
+        fakeRosterPlayer4,
+        fakeRosterPlayer5,
+        fakeRosterPlayer6
     ),
     goalies = persistentListOf(
-        mockRosterPlayer7,
-        mockRosterPlayer8,
-        mockRosterPlayer9
+        fakeRosterPlayer7,
+        fakeRosterPlayer8,
+        fakeRosterPlayer9
     )
 )

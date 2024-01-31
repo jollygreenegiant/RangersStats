@@ -3,7 +3,7 @@ package com.jggdevelopment.rangersstats.model.mock
 import com.jggdevelopment.rangersstats.model.Name
 import com.jggdevelopment.rangersstats.model.RosterPlayer
 
-val mockRosterPlayer1 = RosterPlayer(
+val fakeRosterPlayer1 = RosterPlayer(
     id = 1,
     headshot = "https://assets.nhle.com/mugs/nhl/20232024/NYR/8482157.png",
     firstName = Name("firstName1"),
@@ -21,7 +21,7 @@ val mockRosterPlayer1 = RosterPlayer(
     birthStateProvince = Name("birthStateProvince1")
 )
 
-val mockRosterPlayer2 = RosterPlayer(
+val fakeRosterPlayer2 = RosterPlayer(
     id = 2,
     headshot = "https://assets.nhle.com/mugs/nhl/20232024/NYR/8482157.png",
     firstName = Name("firstName2"),
@@ -39,7 +39,7 @@ val mockRosterPlayer2 = RosterPlayer(
     birthStateProvince = Name("birthStateProvince2")
 )
 
-val mockRosterPlayer3 = RosterPlayer(
+val fakeRosterPlayer3 = RosterPlayer(
     id = 3,
     headshot = "https://assets.nhle.com/mugs/nhl/20232024/NYR/8482157.png",
     firstName = Name("firstName3"),
@@ -57,7 +57,7 @@ val mockRosterPlayer3 = RosterPlayer(
     birthStateProvince = Name("birthStateProvince3")
 )
 
-val mockRosterPlayer4 = RosterPlayer(
+val fakeRosterPlayer4 = RosterPlayer(
     id = 4,
     headshot = "https://assets.nhle.com/mugs/nhl/20232024/NYR/8482157.png",
     firstName = Name("firstName4"),
@@ -75,7 +75,7 @@ val mockRosterPlayer4 = RosterPlayer(
     birthStateProvince = Name("birthStateProvince4")
 )
 
-val mockRosterPlayer5 = RosterPlayer(
+val fakeRosterPlayer5 = RosterPlayer(
     id = 5,
     headshot = "https://assets.nhle.com/mugs/nhl/20232024/NYR/8482157.png",
     firstName = Name("firstName5"),
@@ -93,7 +93,7 @@ val mockRosterPlayer5 = RosterPlayer(
     birthStateProvince = Name("birthStateProvince5")
 )
 
-val mockRosterPlayer6 = RosterPlayer(
+val fakeRosterPlayer6 = RosterPlayer(
     id = 6,
     headshot = "https://assets.nhle.com/mugs/nhl/20232024/NYR/8482157.png",
     firstName = Name("firstName6"),
@@ -111,7 +111,7 @@ val mockRosterPlayer6 = RosterPlayer(
     birthStateProvince = Name("birthStateProvince6")
 )
 
-val mockRosterPlayer7 = RosterPlayer(
+val fakeRosterPlayer7 = RosterPlayer(
     id = 7,
     headshot = "https://assets.nhle.com/mugs/nhl/20232024/NYR/8482157.png",
     firstName = Name("firstName7"),
@@ -129,7 +129,7 @@ val mockRosterPlayer7 = RosterPlayer(
     birthStateProvince = Name("birthStateProvince7")
 )
 
-val mockRosterPlayer8 = RosterPlayer(
+val fakeRosterPlayer8 = RosterPlayer(
     id = 8,
     headshot = "https://assets.nhle.com/mugs/nhl/20232024/NYR/8482157.png",
     firstName = Name("firstName8"),
@@ -147,7 +147,7 @@ val mockRosterPlayer8 = RosterPlayer(
     birthStateProvince = Name("birthStateProvince8")
 )
 
-val mockRosterPlayer9 = RosterPlayer(
+val fakeRosterPlayer9 = RosterPlayer(
     id = 9,
     headshot = "https://assets.nhle.com/mugs/nhl/20232024/NYR/8482157.png",
     firstName = Name("firstName9"),

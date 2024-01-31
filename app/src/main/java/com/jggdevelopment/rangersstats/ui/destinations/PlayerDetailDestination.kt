@@ -18,6 +18,7 @@ fun NavController.navigateToPlayerDetail(playerId: Int) {
 
 fun NavGraphBuilder.playerDetailDestination(navController: NavController) {
     composable("${NavScreens.PLAYER_DETAIL}/{playerId}") { backStackEntry ->
+        // Normally we would handle this error state more elegantly
         val playerId = backStackEntry.arguments?.getString("playerId")?.toInt() ?: 0
         val playerViewModel: PlayerDetailViewModel = koinViewModel(
             parameters = { parametersOf(playerId) }
@@ -27,9 +28,7 @@ fun NavGraphBuilder.playerDetailDestination(navController: NavController) {
 
         PlayerDetailScreen(
             player = player,
-            onBackClick = {
-                navController.popBackStack()
-            }
+            onRefresh = { playerViewModel.getPlayer(playerId) }
         )
     }
 }

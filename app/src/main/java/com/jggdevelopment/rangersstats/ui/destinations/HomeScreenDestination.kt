@@ -20,6 +20,12 @@ fun NavGraphBuilder.homeScreenDestination(navController: NavController) {
             state = state,
             onPlayerClick = {
                 navController.navigateToPlayerDetail(it)
+            },
+            onGameClick = {
+                navController.navigateToGameDetail(it)
+            },
+            onRefresh = {
+                viewModel.getData()
             }
         )
     }

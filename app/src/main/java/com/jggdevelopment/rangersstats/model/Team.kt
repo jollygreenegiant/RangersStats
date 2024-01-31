@@ -5,6 +5,5 @@ data class Team(
     var id: Int,
     var placeName: Name,
     var abbrev: String,
-    var logo: String,
-    var score: Int
+    var logo: String
 )

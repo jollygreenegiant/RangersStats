@@ -3,7 +3,6 @@ package com.jggdevelopment.rangersstats.ui.screens.home
 import androidx.compose.animation.AnimatedContent
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
@@ -15,24 +14,25 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.jggdevelopment.rangersstats.model.Game
 import com.jggdevelopment.rangersstats.model.Roster
-import com.jggdevelopment.rangersstats.model.mock.mockGame
-import com.jggdevelopment.rangersstats.model.mock.mockRosterPlayer1
-import com.jggdevelopment.rangersstats.model.mock.mockRosterPlayer2
-import com.jggdevelopment.rangersstats.model.mock.mockRosterPlayer3
+import com.jggdevelopment.rangersstats.model.mock.fakeGame
+import com.jggdevelopment.rangersstats.model.mock.fakeRosterPlayer1
+import com.jggdevelopment.rangersstats.model.mock.fakeRosterPlayer2
+import com.jggdevelopment.rangersstats.model.mock.fakeRosterPlayer3
+import com.jggdevelopment.rangersstats.ui.screens.ErrorScreen
 import com.jggdevelopment.rangersstats.ui.util.LoadingScreen
 import com.jggdevelopment.rangersstats.ui.util.PreviewScreenSize
-import com.jggdevelopment.rangersstats.util.RangersResult
 import com.jggdevelopment.rangersstats.viewModels.home.HomeUiState
 import kotlinx.collections.immutable.persistentListOf
 
 @Composable
 fun HomeScreen(
     state: HomeUiState,
-    onPlayerClick: (Int) -> Unit
+    onPlayerClick: (Int) -> Unit,
+    onGameClick: (Int) -> Unit,
+    onRefresh: () -> Unit
 ) {
     AnimatedContent(
         targetState = state,
@@ -48,11 +48,12 @@ fun HomeScreen(
                     roster = uiState.roster,
                     record = uiState.record,
                     nextGame = uiState.nextGame,
-                    onPlayerClick = onPlayerClick
+                    onPlayerClick = onPlayerClick,
+                    onGameClick = onGameClick
                 )
             }
             is HomeUiState.Error -> {
-                Text("Error")
+                ErrorScreen(onRefresh)
             }
         }
     }
@@ -64,7 +65,8 @@ fun HomeContent(
     roster: Roster,
     record: String,
     nextGame: Game,
-    onPlayerClick: (Int) -> Unit
+    onPlayerClick: (Int) -> Unit,
+    onGameClick: (Int) -> Unit
 ) {
     LazyColumn {
         stickyHeader {
@@ -81,7 +83,7 @@ fun HomeContent(
                 Spacer(modifier = Modifier.height(8.dp))
                 GameCard(
                     game = nextGame,
-                    onClick = { /* TODO */ }
+                    onClick = onGameClick
                 )
             }
         }
@@ -118,17 +120,19 @@ private fun HomeScreenPreview() {
             state = HomeUiState.Success(
                 roster = Roster(
                     forwards = persistentListOf(
-                        mockRosterPlayer1,
-                        mockRosterPlayer2,
-                        mockRosterPlayer3
+                        fakeRosterPlayer1,
+                        fakeRosterPlayer2,
+                        fakeRosterPlayer3
                     ),
                     defensemen = persistentListOf(),
                     goalies = persistentListOf()
                 ),
                 record = "21-2-3",
-                nextGame = mockGame
+                nextGame = fakeGame
             ),
-            onPlayerClick = { }
+            onPlayerClick = { },
+            onGameClick = { },
+            onRefresh = { }
         )
     }
 }
