@@ -13,3 +13,8 @@ There's nothing in this app that doesn't already have default accessibility tags
 
 ### Testing
 The app has basic unit tests for two of its ViewModels.  The `PlayerDetailsViewModel` is essentially just a wrapper around the repository function, and has no state mapper, so I didn't write tests for it because they would either be trivial or testing something that is already covered by the other ViewModels' tests.
+
+### External tools
+`sad_hockey_player.png` was generated using ChatGPT.
+
+`nyr_loader.xml` was not created using external tools - it is a modification of a loading indicator I made for the latest version of Luna (in the shape of a crescent moon).  It's just an animated vector drawable where the path stroke is trimmed at certain keyframes to create the loading effect.
