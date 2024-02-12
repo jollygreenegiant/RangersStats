@@ -1,4 +1,4 @@
-package com.jggdevelopment.rangersstats.viewModels.game_detail
+package com.jggdevelopment.rangersstats.view_models.game_detail
 
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi

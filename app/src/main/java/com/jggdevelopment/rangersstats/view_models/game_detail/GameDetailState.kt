@@ -1,4 +1,4 @@
-package com.jggdevelopment.rangersstats.viewModels.game_detail
+package com.jggdevelopment.rangersstats.view_models.game_detail
 
 import com.jggdevelopment.rangersstats.model.GameCenter
 import com.jggdevelopment.rangersstats.model.Name
@@ -6,7 +6,6 @@ import com.jggdevelopment.rangersstats.model.PlayerLeader
 import com.jggdevelopment.rangersstats.model.TeamLeaders
 import com.jggdevelopment.rangersstats.model.TeamPlayerStats
 import com.jggdevelopment.rangersstats.util.RangersResult
-import org.slf4j.MDC.put
 
 sealed interface GameDetailState {
     data object Loading: GameDetailState

@@ -1,4 +1,4 @@
-package com.jggdevelopment.rangersstats.viewModels.home
+package com.jggdevelopment.rangersstats.view_models.home
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope

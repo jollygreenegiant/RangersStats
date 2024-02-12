@@ -1,4 +1,4 @@
-package com.jggdevelopment.rangersstats.viewModels.game_detail
+package com.jggdevelopment.rangersstats.view_models.game_detail
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -24,7 +24,7 @@ class GameDetailViewModel(
     fun getGame(gameId: Int) = viewModelScope.launch {
         _state.update { GameDetailState.Loading }
 
-        val gameCenterResponse = async { rangersRepository.getGame(gameId) }.await()
+        val gameCenterResponse = rangersRepository.getGame(gameId)
 
         if (gameCenterResponse is RangersResult.Success) {
             val awayTeamStatsRequest = async {

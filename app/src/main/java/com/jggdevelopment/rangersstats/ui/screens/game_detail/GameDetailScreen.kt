@@ -11,9 +11,9 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -38,7 +38,7 @@ import com.jggdevelopment.rangersstats.ui.screens.home.GameCardContent
 import com.jggdevelopment.rangersstats.ui.util.LoadingScreen
 import com.jggdevelopment.rangersstats.ui.util.PreviewScreenSize
 import com.jggdevelopment.rangersstats.ui.util.debugPlaceholder
-import com.jggdevelopment.rangersstats.viewModels.game_detail.GameDetailState
+import com.jggdevelopment.rangersstats.view_models.game_detail.GameDetailState
 
 @Composable
 fun GameDetailScreen(
@@ -75,7 +75,7 @@ private fun GameDetailContent(
     teamLeaders: List<TeamLeaders>,
     onPlayerClick: (Int) -> Unit
 ) {
-    Column(modifier = Modifier.padding(16.dp)) {
+    Column(modifier = Modifier.padding(16.dp).verticalScroll(rememberScrollState())) {
         GameCardContent(
             awayLogo = game.awayTeam.logo,
             homeLogo = game.homeTeam.logo,
@@ -116,8 +116,8 @@ private fun PlayerLeaders(
     playerLeaders: List<TeamLeaders>,
     onPlayerClick: (Int) -> Unit
 ) {
-    LazyColumn(verticalArrangement = Arrangement.spacedBy(8.dp)) {
-        items(playerLeaders) {
+    Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
+        playerLeaders.forEach {
             PlayerLeaderRow(
                 stat = it,
                 onPlayerClick = onPlayerClick

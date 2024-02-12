@@ -7,7 +7,7 @@ import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.composable
 import com.jggdevelopment.rangersstats.ui.NavScreens
 import com.jggdevelopment.rangersstats.ui.screens.player_detail.PlayerDetailScreen
-import com.jggdevelopment.rangersstats.viewModels.player_detail.PlayerDetailViewModel
+import com.jggdevelopment.rangersstats.view_models.player_detail.PlayerDetailViewModel
 import org.koin.androidx.compose.koinViewModel
 import org.koin.core.parameter.parametersOf
 

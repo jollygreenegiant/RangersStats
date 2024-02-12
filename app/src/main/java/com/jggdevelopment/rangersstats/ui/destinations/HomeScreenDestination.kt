@@ -7,7 +7,7 @@ import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.composable
 import com.jggdevelopment.rangersstats.ui.NavScreens
 import com.jggdevelopment.rangersstats.ui.screens.home.HomeScreen
-import com.jggdevelopment.rangersstats.viewModels.home.HomeViewModel
+import com.jggdevelopment.rangersstats.view_models.home.HomeViewModel
 import org.koin.androidx.compose.koinViewModel
 
 fun NavGraphBuilder.homeScreenDestination(navController: NavController) {

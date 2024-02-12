@@ -1,5 +1,6 @@
 package com.jggdevelopment.rangersstats.ui.screens.home
 
+import android.content.res.Configuration
 import androidx.compose.animation.AnimatedContent
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.clickable
@@ -14,6 +15,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.unit.dp
 import com.jggdevelopment.rangersstats.model.Game
 import com.jggdevelopment.rangersstats.model.Roster
@@ -24,7 +26,7 @@ import com.jggdevelopment.rangersstats.model.mock.fakeRosterPlayer3
 import com.jggdevelopment.rangersstats.ui.screens.ErrorScreen
 import com.jggdevelopment.rangersstats.ui.util.LoadingScreen
 import com.jggdevelopment.rangersstats.ui.util.PreviewScreenSize
-import com.jggdevelopment.rangersstats.viewModels.home.HomeUiState
+import com.jggdevelopment.rangersstats.view_models.home.HomeUiState
 import kotlinx.collections.immutable.persistentListOf
 
 @Composable
@@ -68,11 +70,21 @@ fun HomeContent(
     onPlayerClick: (Int) -> Unit,
     onGameClick: (Int) -> Unit
 ) {
+    val configuration = LocalConfiguration.current
+
     LazyColumn {
-        stickyHeader {
-            TeamHeader(
-                record = record
-            )
+        if (configuration.orientation == Configuration.ORIENTATION_LANDSCAPE) {
+            item {
+                TeamHeader(
+                    record = record
+                )
+            }
+        } else {
+            stickyHeader {
+                TeamHeader(
+                    record = record
+                )
+            }
         }
         item {
             Column(modifier = Modifier.padding(16.dp)) {
@@ -111,6 +123,7 @@ fun HomeContent(
         }
     }
 }
+
 
 @PreviewScreenSize
 @Composable

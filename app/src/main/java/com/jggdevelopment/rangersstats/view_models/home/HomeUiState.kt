@@ -1,4 +1,4 @@
-package com.jggdevelopment.rangersstats.viewModels.home
+package com.jggdevelopment.rangersstats.view_models.home
 
 import com.jggdevelopment.rangersstats.model.Game
 import com.jggdevelopment.rangersstats.model.Roster

@@ -1,4 +1,4 @@
-package com.jggdevelopment.rangersstats.viewModels.game_detail.viewModels.game_detail
+package com.jggdevelopment.rangersstats.view_models.game_detail.viewModels.game_detail
 
 import com.jggdevelopment.rangersstats.model.TeamPlayerStats
 import com.jggdevelopment.rangersstats.model.mock.fakeGame
@@ -6,9 +6,9 @@ import com.jggdevelopment.rangersstats.model.mock.fakeGoalieStats
 import com.jggdevelopment.rangersstats.model.mock.fakeSkaterStats
 import com.jggdevelopment.rangersstats.repository.RangersRepository
 import com.jggdevelopment.rangersstats.util.RangersResult
-import com.jggdevelopment.rangersstats.viewModels.game_detail.GameDetailState
-import com.jggdevelopment.rangersstats.viewModels.game_detail.GameDetailViewModel
-import com.jggdevelopment.rangersstats.viewModels.game_detail.MainDispatcherRule
+import com.jggdevelopment.rangersstats.view_models.game_detail.GameDetailState
+import com.jggdevelopment.rangersstats.view_models.game_detail.GameDetailViewModel
+import com.jggdevelopment.rangersstats.view_models.game_detail.MainDispatcherRule
 import io.mockk.coEvery
 import io.mockk.mockk
 import org.junit.Rule

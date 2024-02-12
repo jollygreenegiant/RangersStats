@@ -1,8 +1,7 @@
-package com.jggdevelopment.rangersstats.viewModels.player_detail
+package com.jggdevelopment.rangersstats.view_models.player_detail
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.jggdevelopment.rangersstats.model.RosterPlayer
 import com.jggdevelopment.rangersstats.model.RosterPlayerWithStats
 import com.jggdevelopment.rangersstats.repository.RangersRepository
 import com.jggdevelopment.rangersstats.util.RangersResult

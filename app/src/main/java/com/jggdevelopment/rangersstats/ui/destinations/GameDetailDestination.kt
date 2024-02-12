@@ -8,7 +8,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
 import com.jggdevelopment.rangersstats.ui.NavScreens
 import com.jggdevelopment.rangersstats.ui.screens.game_detail.GameDetailScreen
-import com.jggdevelopment.rangersstats.viewModels.game_detail.GameDetailViewModel
+import com.jggdevelopment.rangersstats.view_models.game_detail.GameDetailViewModel
 import org.koin.androidx.compose.koinViewModel
 import org.koin.core.parameter.parametersOf
 

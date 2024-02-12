@@ -1,12 +1,12 @@
-package com.jggdevelopment.rangersstats.viewModels.game_detail.viewModels.game_detail
+package com.jggdevelopment.rangersstats.view_models.game_detail.viewModels.game_detail
 
 import com.jggdevelopment.rangersstats.model.TeamPlayerStats
 import com.jggdevelopment.rangersstats.model.mock.fakeGame
 import com.jggdevelopment.rangersstats.model.mock.fakeGoalieStats
 import com.jggdevelopment.rangersstats.model.mock.fakeSkaterStats
 import com.jggdevelopment.rangersstats.util.RangersResult
-import com.jggdevelopment.rangersstats.viewModels.game_detail.GameDetailState
-import com.jggdevelopment.rangersstats.viewModels.game_detail.GameDetailStateMapper
+import com.jggdevelopment.rangersstats.view_models.game_detail.GameDetailState
+import com.jggdevelopment.rangersstats.view_models.game_detail.GameDetailStateMapper
 import org.junit.Test
 
 class GameDetailStateMapperTest {

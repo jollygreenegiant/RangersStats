@@ -1,9 +1,9 @@
 package com.jggdevelopment.rangersstats.model
 
 data class TeamLeaders(
-    var category: String,
-    var awayLeader: PlayerLeader,
-    var homeLeader: PlayerLeader
+    val category: String,
+    val awayLeader: PlayerLeader,
+    val homeLeader: PlayerLeader
 ) {
     val categoryAbbreviation
         get() = when(category) {

@@ -3,9 +3,9 @@ package com.jggdevelopment.rangersstats.di
 import com.jggdevelopment.rangersstats.network.NhlApi
 import com.jggdevelopment.rangersstats.repository.RangersRepository
 import com.jggdevelopment.rangersstats.repository.RangersRepositoryImpl
-import com.jggdevelopment.rangersstats.viewModels.game_detail.GameDetailViewModel
-import com.jggdevelopment.rangersstats.viewModels.home.HomeViewModel
-import com.jggdevelopment.rangersstats.viewModels.player_detail.PlayerDetailViewModel
+import com.jggdevelopment.rangersstats.view_models.game_detail.GameDetailViewModel
+import com.jggdevelopment.rangersstats.view_models.home.HomeViewModel
+import com.jggdevelopment.rangersstats.view_models.player_detail.PlayerDetailViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 import retrofit2.Retrofit
